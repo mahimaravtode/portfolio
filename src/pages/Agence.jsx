@@ -180,6 +180,38 @@ const Agence = () => {
     };
   }, []);
 
+  const experience = [
+    {
+      company: "La Net Team Software Solution Pvt Ltd",
+      role: "Web Designer",
+      period: "Jan 2026 — Present",
+      bullets: [
+        "Collaborated with 5+ clients to gather requirements and deliver custom web solutions aligned with business and design goals.",
+        "Developed scalable dashboards and websites, improving UX consistency and reducing load time by 25–35% using lazy loading, code splitting, and asset optimization.",
+        "Improved accessibility across web apps and user experience, increasing overall user engagement.",
+      ],
+    },
+    {
+      company: "Mantraksh Devs",
+      role: "Web Designer",
+      period: "Mar 2025 — Dec 2025",
+      bullets: [
+        "Worked on responsive design and modern web experiences using React, Bootstrap, React-Bootstrap, and modern frameworks.",
+        "Enhanced performance and accessibility across multiple SaaS-based projects.",
+      ],
+    },
+    {
+      company: "Globalia Soft LLP",
+      role: "Web Designer",
+      period: "Sep 2024 — Feb 2025",
+      bullets: [
+        "Designed and developed responsive websites using HTML, CSS, JavaScript, and modern frameworks.",
+        "Implemented modern UI frameworks such as Tailwind CSS, Material-UI and Chakra UI to create visually appealing, efficient interfaces.",
+        "Converted Figma design mockups into interactive web pages with pixel-perfect accuracy.",
+      ],
+    },
+  ];
+
   const services = [
     [
       "Portfolio websites",
@@ -200,15 +232,33 @@ const Agence = () => {
   ];
 
   const skills = [
-    "React",
-    "Tailwind CSS",
-    "GSAP",
-    "JavaScript",
-    "Responsive UI",
-    "Frontend Architecture",
-    "Animations",
-    "Clean Code",
+    {
+      label: "Web Technologies",
+      items: ["HTML5", "CSS3", "JavaScript", "TypeScript"],
+    },
+    {
+      label: "Frameworks",
+      items: ["Tailwind CSS", "Bootstrap", "Material-UI", "Chakra UI", "React", "React-Bootstrap"],
+    },
+    {
+      label: "Libraries",
+      items: ["React.js", "Next.js", "Styled Components"],
+    },
+    {
+      label: "Design Tools",
+      items: ["Figma", "Canva", "Illustrator"],
+    },
+    {
+      label: "Practices",
+      items: ["Responsive Design", "Cross-Browser Compatibility", "UI/UX Implementation"],
+    },
+    {
+      label: "Soft Skills",
+      items: ["Collaboration", "Communication", "Problem-Solving", "Adaptability"],
+    },
   ];
+
+  const marqueeSkills = skills.flatMap((group) => group.items);
 
   const stats = [
     ["20+", "Interfaces shaped"],
@@ -276,7 +326,7 @@ const Agence = () => {
               {stats.map(([value, label]) => (
                 <div
                   key={label}
-                  className="flex items-end justify-between gap-5 border-black/15 sm:block sm:border-r sm:pr-5 sm:last:border-r-0"
+                  className="flex items-end justify-between gap-5 border-black/15 py-3 sm:block sm:border-r sm:pr-5 sm:last:border-r-0"
                 >
                   <strong className="font-[font2] text-5xl uppercase leading-none lg:text-7xl">
                     {value}
@@ -305,12 +355,36 @@ const Agence = () => {
               </svg>
             </div>
           </div>
+
+          <div className="mt-16 space-y-8 border-t border-black/10 pt-12">
+            <div className="font-[font1] text-sm uppercase tracking-[0.25em] text-black/45">Experience</div>
+            <div className="grid gap-6">
+              {experience.map(({ company, role, period, bullets }) => (
+                <article key={company} className="rounded-[32px] border border-black/10 bg-white/95 p-8 shadow-sm">
+                  <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+                    <div>
+                      <p className="font-[font1] text-sm uppercase tracking-[0.25em] text-black/40">{role}</p>
+                      <h3 className="mt-3 font-[font2] text-4xl uppercase leading-none lg:text-5xl">{company}</h3>
+                    </div>
+                    <span className="font-[font1] text-sm uppercase tracking-[0.2em] text-black/50">{period}</span>
+                  </div>
+                  <ul className="mt-8 space-y-3 font-[font1] text-base leading-relaxed text-black/70">
+                    {bullets.map((bullet) => (
+                      <li key={bullet} className="pl-4 before:content-['–'] before:mr-2 before:text-black/70">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="border-y border-black/15 bg-black px-4 py-6 text-[var(--color-accent)] lg:px-6">
         <div className="moveX flex w-max items-center gap-10 font-[font2] text-5xl uppercase leading-none lg:text-8xl">
-          {[...skills, ...skills].map((skill, idx) => (
+          {[...marqueeSkills, ...marqueeSkills].map((skill, idx) => (
             <span key={`${skill}-${idx}`} className="whitespace-nowrap">
               {skill}
             </span>
@@ -354,17 +428,24 @@ const Agence = () => {
               />
             </svg>
           </div>
-          <h2 className="font-[font2] text-6xl uppercase  leading-[0.85] lg:text-9xl">
+          <h2 className="font-[font2] text-6xl uppercase leading-[0.85] lg:text-9xl">
             Skills
           </h2>
-          <div className="flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-black px-5 py-3 font-[font1] text-base uppercase transition-colors hover:bg-black hover:text-[var(--color-accent)] lg:px-7 lg:py-4 lg:text-xl"
-              >
-                {skill}
-              </span>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {skills.map((group) => (
+              <div key={group.label} className="rounded-[28px] border border-black/10 bg-white/95 p-6 shadow-sm">
+                <p className="font-[font1] text-sm uppercase tracking-[0.25em] text-black/45">{group.label}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-black/10 bg-black/5 px-4 py-2 text-sm uppercase text-black/75"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>

@@ -15,13 +15,13 @@ const Contact = () => {
           </p>
 
           <div className='space-y-5 font-[font1] text-xl lg:text-2xl'>
-            <a className='block border-b border-white/25 pb-4 transition-colors hover:text-[var(--color-accent)]' href='mailto:mahima@example.com'>
-              mahima@example.com
+            <a className='block border-b border-white/25 pb-4 transition-colors hover:text-[var(--color-accent)]' href='mailto:mahima.ravtode@gmail.com'>
+              mahima.ravtode@gmail.com
             </a>
-            <a className='block border-b border-white/25 pb-4 transition-colors hover:text-[var(--color-accent)]' href='https://www.linkedin.com' target='_blank' rel='noreferrer'>
-              LinkedIn
+            <a className='block border-b border-white/25 pb-4 transition-colors hover:text-[var(--color-accent)]' href='https://linkedin.com/in/mahima-ravtode-168572ab' target='_blank' rel='noreferrer'>
+              linkedin.com/in/mahima-ravtode-168572ab
             </a>
-            <a className='block border-b border-white/25 pb-4 transition-colors hover:text-[var(--color-accent)]' href='https://github.com' target='_blank' rel='noreferrer'>
+            <a className='block border-b border-white/25 pb-4 transition-colors hover:text-[var(--color-accent)]' href='https://github.com/mahima-ravtode' target='_blank' rel='noreferrer'>
               GitHub
             </a>
             <p className='pt-4 text-white/55'>Based in India. Available remotely.</p>

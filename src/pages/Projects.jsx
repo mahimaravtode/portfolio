@@ -8,26 +8,26 @@ gsap.registerPlugin(ScrollTrigger)
 const Projects = () => {
 
   const projects = [{
-    title1: 'PJC',
-    type1: 'Brand experience',
-    image1: 'https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg',
-    title2: 'Widescape',
-    type2: 'Digital campaign',
-    image2: 'https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---Thumbnail-1280x960.jpg'
+    title1: 'DurXen',
+    type1: 'React Admin Dashboard',
+    image1: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80',
+    title2: 'OkYA',
+    type2: 'AI Dashboard & Chatbot',
+    image2: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80'
   }, {
-    title1: 'OKA',
-    type1: 'Creative platform',
-    image1: 'https://k72.ca/uploads/caseStudies/OKA/OKA_thumbnail-1280x960.jpg',
-    title2: 'Opto',
-    type2: 'Product story',
-    image2: 'https://k72.ca/uploads/caseStudies/Opto/thumbnailimage_opto-1280x960.jpg'
+    title1: 'Dubai Advanced Marine',
+    type1: 'Yacht & Maritime Website',
+    image1: 'https://images.unsplash.com/photo-1501769214405-5e86e98ade4a?auto=format&fit=crop&w=1200&q=80',
+    title2: 'Framer Motion UI',
+    type2: 'Motion-led Landing Page',
+    image2: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80'
   }, {
-    title1: 'La Majeure',
-    type1: 'Sound identity',
-    image1: 'https://k72.ca/uploads/caseStudies/LAMAJEURE_-_Son_sur_mesure/chalaxeur-thumbnail_img-1280x960.jpg',
-    title2: 'Shelton',
-    type2: 'Visual system',
-    image2: 'https://k72.ca/uploads/caseStudies/SHELTON/thumbnailimage_shelton-1280x960.jpg'
+    title1: 'SaaS Admin Template',
+    type1: 'Enterprise Dashboard',
+    image1: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
+    title2: 'Design System',
+    type2: 'Component Library',
+    image2: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80'
   }]
 
   useGSAP(function () {
@@ -46,17 +46,17 @@ const Projects = () => {
   })
 
   return (
-    <div id='projects' className='bg-[#f7f4ec] px-2 pb-12 pt-28 text-[#101010] lg:px-4 lg:pb-20'>
+    <div id='projects' className='bg-[var(--color-project-bg)] px-2 pb-12 pt-28 text-[var(--color-project-text)] lg:px-4 lg:pb-20'>
       <div className='flex flex-col min-h-[50vh] justify-end border-b border-black/15 pb-5 lg:pb-8'>
-        <div className='mb-5 flex items-end justify-between gap-6'>
+        <div className='mb-5 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between'>
           <p className='max-w-[460px] font-[font1] text-sm uppercase leading-tight text-black/55 lg:text-base'>
-            Selected work shaped through strategy, identity and digital craft.
+            Selected projects built with React, Tailwind CSS, Chakra UI, and motion design.
           </p>
           <span className='hidden rounded-full border border-black/20 px-5 py-2 font-[font1] text-sm uppercase text-black/65 lg:block'>
             06 cases
           </span>
         </div>
-        <h2 className='font-[font2] text-[22vw] uppercase leading-[0.78] tracking-normal lg:text-[11vw]'>Projets</h2>
+        <h2 className='font-[font2] text-[22vw] uppercase leading-[0.78] tracking-normal lg:text-[11vw]'>Selected Work</h2>
       </div>
 
       <div className='lol pt-4 lg:pt-6'>
