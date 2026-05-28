@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+    --color-accent: #D3FD50;
+    --color-home-bg: #070707;
+    --color-about-bg: #f6f3ea;
+    --color-contact-bg: #111111;
+    --color-menu-bg: #050505;
+    --color-menu-bg-alt: #080808;
+    --color-accent-glow: rgba(211, 253, 80, 0.18);
+}
+
+@font-face {
+    font-family: font1;
+    src: url(../fonts/Lausanne-300.woff2);
+}
+@font-face {
+    font-family: font2;
+    src: url(../fonts/Lausanne-500.woff2);
+}
+
+
+.moveX{
+    animation-name: moveAnimation;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.moveLink{
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+
+.link:hover .moveLink{
+    opacity: 1;
+}
+
+@keyframes moveAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
