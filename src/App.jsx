@@ -25,7 +25,9 @@ const App = () => {
   }, []);
 
   return (
-    <Home />
+    <div className="bg-[var(--color-about-bg)]">
+      <Home />
+    </div>
   );
 };
 

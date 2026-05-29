@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import BorderGlow from "../components/common/BorderGlow";
 
 const ServiceCard = ({ title, body, index }) => {
   const wrapperRef = useRef(null);
@@ -408,9 +409,8 @@ const Agence = () => {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1800px] px-4 pb-28 lg:px-6">
-        <div className="relative grid gap-8 pt-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div ref={skillsLineWrapperRef} className="absolute left-0 top-0 h-15 w-full">
+      <section className="mx-auto relative max-w-[1800px] px-4 pb-28 lg:px-6">
+          <div ref={skillsLineWrapperRef} className="absolute left-0  top-0 h-15 w-full">
             <svg
               width="100%"
               height="50"
@@ -427,24 +427,41 @@ const Agence = () => {
               />
             </svg>
           </div>
-          <h2 className="font-[font2] text-6xl uppercase leading-[0.85] lg:text-9xl">
+        <div className="relative grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <h2 className="font-[font2] text-6xl uppercase pt-20 leading-[0.85] lg:text-9xl">
             Skills
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 pt-20">
             {skills.map((group) => (
-              <div key={group.label} className="rounded-[28px] border border-black/10 bg-white/95 p-6 shadow-sm">
-                <p className="font-[font1] text-sm uppercase tracking-[0.25em] text-black/45">{group.label}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-black/10 bg-black/5 px-4 py-2 text-sm uppercase text-black/75"
-                    >
-                      {item}
-                    </span>
-                  ))}
+              <BorderGlow
+                key={group.label}
+                className="rounded-[28px]"
+                edgeSensitivity={30}
+                glowColor="40 80 80"
+                backgroundColor="var(--color-project-bg)"
+                borderColor="rgba(192, 132, 252, 0.18)"
+                borderRadius={28}
+                glowRadius={36}
+                glowIntensity={1}
+                coneSpread={25}
+                animated={false}
+                colors={["#c084fc", "#f472b6", "#38bdf8"]}
+                fillOpacity={0.5}
+              >
+                <div className="p-6">
+                  <p className="font-[font1] text-sm uppercase tracking-[0.25em] text-black/45">{group.label}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {group.items.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-black/10 bg-black/5 px-4 py-2 text-sm uppercase text-black/75"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </BorderGlow>
             ))}
           </div>
         </div>

@@ -156,7 +156,7 @@ const FullScreenNav = () => {
             onClick={() => setNavOpen(false)}
             className='group relative flex h-16 w-16 cursor-pointer items-center justify-center rounded-full border border-white/20 transition-colors hover:border-[var(--color-accent)] lg:h-24 lg:w-24'
             aria-label='Close navigation'
-            type='button'
+            type='button' 
           >
             <span className='absolute h-10 w-[2px] rotate-45 bg-[var(--color-accent)] transition-transform group-hover:rotate-[135deg] lg:h-16 lg:w-[3px]'></span>
             <span className='absolute h-10 w-[2px] -rotate-45 bg-[var(--color-accent)] transition-transform group-hover:rotate-45 lg:h-16 lg:w-[3px]'></span>

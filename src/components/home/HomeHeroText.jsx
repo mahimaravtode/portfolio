@@ -1,9 +1,9 @@
 import Video from './Video'
-
+import HeroBottomText from './HomeBottomText'
 const HomeHeroText = () => {
   return (
-    <section className='mx-auto flex w-full max-w-[1800px] flex-1 flex-col justify-center font-[font1]'>
-      <div className='mb-8 grid gap-3 border-b border-white/20 pb-4 font-[font1] text-xs uppercase text-white/65 sm:grid-cols-3 lg:mb-10 lg:text-sm'>
+    <section className='mx-auto flex w-full max-w-[1800px] flex-1 flex-col font-[font1]'>
+      <div className='mb-8 grid gap-3 border-b border-white/20 pb-4 font-[font1] text-xs uppercase text-white/65 sm:grid-cols-3 lg:mb-5 lg:text-sm'>
         <span>Mahima Ravtode</span>
         <span className='sm:text-center'>Web Designer & Frontend Developer</span>
         <span className='sm:text-right'>React, Tailwind, UI</span>
@@ -29,11 +29,12 @@ const HomeHeroText = () => {
         Digital Work
       </div>
 
-      <div className='mt-8 grid gap-3 border-t border-white/20 pt-4 font-[font1] text-xs uppercase text-white/60 sm:grid-cols-3 lg:mt-12 lg:text-sm'>
+      <div className='mt-8 mb-25 grid gap-3 border-t border-white/20 pt-4 font-[font1] text-xs uppercase text-white/60 sm:grid-cols-3 lg:mt-12 lg:text-sm'>
         <p>Portfolio websites</p>
         <p className='sm:text-center'>React + Tailwind UI</p>
         <p className='sm:text-right'>Smooth animation</p>
       </div>
+      <HeroBottomText />
     </section>
   )
 }

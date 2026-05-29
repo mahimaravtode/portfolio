@@ -21,13 +21,13 @@ const Contact = () => {
             <a className='block border-b border-white/25 pb-4 transition-colors hover:text-[var(--color-accent)]' href='https://linkedin.com/in/mahima-ravtode-168572ab' target='_blank' rel='noreferrer'>
               linkedin.com/in/mahima-ravtode-168572ab
             </a>
-            <a className='block border-b border-white/25 pb-4 transition-colors hover:text-[var(--color-accent)]' href='https://github.com/mahima-ravtode' target='_blank' rel='noreferrer'>
+            <a className='block border-b border-white/25 pb-4 transition-colors hover:text-[var(--color-accent)]' href='https://github.com/mahima0824' target='_blank' rel='noreferrer'>
               GitHub
             </a>
             <p className='pt-4 text-white/55'>Based in India. Available remotely.</p>
           </div>
         </div>
-      </section>
+      </section>   
     </main>
   )
 }
