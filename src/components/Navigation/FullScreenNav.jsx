@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { useContext, useRef } from 'react'
+import { useContext, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { NavbarContext } from '../../context/NavContext'
 
@@ -35,6 +35,15 @@ const FullScreenNav = () => {
   const fullScreenRef = useRef(null)
   const [navOpen, setNavOpen] = useContext(NavbarContext)
 
+  // Prevent body scroll when nav is open
+  useEffect(() => {
+    if (navOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+  }, [navOpen])
+
   function scrollToSection(path) {
     const targetId = path.replace('#', '')
     const target = document.getElementById(targetId)
@@ -43,14 +52,14 @@ const FullScreenNav = () => {
 
     if (!target) return
 
-    window.dispatchEvent(new CustomEvent('section:navigate'))
+    window.dispatchEvent(new CustomEvent('section:navigate')) 
     window.history.replaceState(null, '', path)
 
     setTimeout(() => {
       const sectionTop = target.getBoundingClientRect().top + window.scrollY
 
       window.scrollTo({
-        top: sectionTop,
+        top: sectionTop, 
         behavior: 'auto',
       })
     }, 450)
@@ -117,7 +126,7 @@ const FullScreenNav = () => {
     <div
       ref={fullScreenRef}
       id='fullscreennav'
-      className='fullscreennav fixed inset-0 z-50 hidden h-screen w-full overflow-hidden text-white'
+      className='fullscreennav fixed inset-0 z-[80] hidden h-screen w-full overflow-hidden text-white'
     >
       <div className='fixed inset-0 h-screen w-full'>
         <div className='flex h-full w-full'>
@@ -134,13 +143,13 @@ const FullScreenNav = () => {
           <Link
             to='/'
             onClick={() => setNavOpen(false)}
-            className='font-[font2] text-2xl uppercase leading-none text-white lg:text-5xl'
+            className='font-[font2] text-2xl uppercase leading-none text-white lg:text-4xl'
           >
-            Portfolio
+            Mahima
           </Link>
 
-          <div className='hidden pt-1 font-[font1] text-sm uppercase tracking-[0.28em] text-white/50 md:block'>
-            Navigation / 04 pages
+          <div className='hidden pt-1 font-[font1] text-sm uppercase tracking-[0.28em] text-white/65 md:block'>
+            Menu / 04
           </div>
 
           <button
@@ -202,10 +211,10 @@ const FullScreenNav = () => {
           ))}
         </nav>
 
-        <div className='navlink grid gap-3 border-t border-white/15 p-4 font-[font1] text-xs uppercase tracking-[0.18em] text-white/50 opacity-0 sm:grid-cols-3 lg:p-6 lg:text-sm'>
-          <span>React / Tailwind / GSAP</span>
-          <span className='sm:text-center'>Creative frontend portfolio</span>
-          <span className='sm:text-right'>Scroll, hover, explore</span>
+        <div className='navlink grid gap-3 border-t border-white/20 p-4 font-[font1] text-xs uppercase text-white/60 opacity-0 sm:grid-cols-3 lg:p-6 lg:text-sm'>
+          <span>Mahima Ravtode</span>
+          <span className='sm:text-center'>Web Designer & Developer</span>
+          <span className='sm:text-right'>React, Tailwind, UI</span>
         </div>
       </div>
     </div>

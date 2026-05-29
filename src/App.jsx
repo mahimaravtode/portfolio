@@ -1,6 +1,4 @@
 import Home from "./pages/Home";
-import Navbar from "./components/Navigation/Navbar";
-import FullScreenNav from "./components/Navigation/FullScreenNav";
 import { useEffect } from "react";
 import Lenis from "lenis";
 
@@ -27,11 +25,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="overflow-x-hidden">
-      <Navbar />
-      <FullScreenNav />
-      <Home />
-    </div>
+    <Home />
   );
 };
 

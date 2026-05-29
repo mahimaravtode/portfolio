@@ -270,9 +270,8 @@ const Agence = () => {
     <main className="min-h-screen bg-[var(--color-about-bg)] text-black">
       <section
         id="about"
-        className="relative overflow-hidden px-4 pb-16 pt-32 lg:px-6 lg:pb-24 lg:pt-40"
+        className="relative overflow-hidden px-4 pb-16 pt-32 lg:px-6 lg:pb-24 lg:pt-25"
       >
-        <div className="absolute inset-x-4 top-24 h-px bg-black/15 lg:inset-x-6"></div>
 
         <div className="relative mx-auto max-w-[1800px]">
           <div className="grid gap-3 border-b border-black/20 pb-4 font-[font1] text-xs uppercase tracking-[0.18em] text-black/55 sm:grid-cols-3 lg:text-sm">
@@ -286,7 +285,7 @@ const Agence = () => {
               <p className="font-[font1] text-sm uppercase tracking-[0.28em] text-black/45 lg:text-base">
                 Creative frontend developer
               </p>
-              <h1 className="mt-5 max-w-6xl font-[font2] text-[20vw] uppercase leading-[0.76] lg:text-[10vw]">
+              <h1 className="mt-5 max-w-6xl font-[font2] text-[20vw] uppercase leading-[0.8] lg:text-[8vw]">
                 About <br /> Me
               </h1>
             </div>
@@ -356,7 +355,7 @@ const Agence = () => {
             </div>
           </div>
 
-          <div className="mt-16 space-y-8 border-t border-black/10 pt-12">
+          <div className="mt-16 space-y-8 pt-10">
             <div className="font-[font1] text-sm uppercase tracking-[0.25em] text-black/45">Experience</div>
             <div className="grid gap-6">
               {experience.map(({ company, role, period, bullets }) => (

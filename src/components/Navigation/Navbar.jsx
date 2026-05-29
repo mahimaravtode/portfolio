@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react'
+import { useContext, useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { NavbarColorContext, NavbarContext } from '../../context/NavContext'
 
@@ -7,9 +7,18 @@ const Navbar = () => {
     const navGreenRef = useRef(null)
     const [, setNavOpen] = useContext(NavbarContext)
     const [navColor] = useContext(NavbarColorContext)
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50)
+        }
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
 
     return (
-        <div className='z-40 flex fixed top-0 w-full items-start justify-between'>
+        <div className={`z-[60] flex fixed top-0 w-full items-start justify-between h-16 transition-colors duration-300 ${scrolled ? 'bg-black' : 'bg-transparent'}`}>
             <div className='lg:p-5 p-2 '>
                 <Link to='/' className='block font-[font2] text-2xl uppercase leading-none lg:text-4xl' style={{ color: navColor }}>
                     Mahima

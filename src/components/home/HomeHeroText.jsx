@@ -13,11 +13,11 @@ const HomeHeroText = () => {
         I design premium web experiences with React, Tailwind, and motion-rich UI.
       </p>
 
-      <h1 className='text-center font-[font2] text-[18vw] uppercase leading-[0.76] lg:text-[8vw]'>
+      <h1 className='text-center font-[font2] text-[18vw] uppercase leading-[0.76] lg:text-[7vw]'>
         Web Designer
       </h1>
 
-      <div className='mt-2 flex items-center justify-center gap-2 text-center font-[font2] text-[13vw] uppercase leading-[0.84] lg:gap-5 lg:text-[8vw]'>
+      <div className='mt-2 flex items-center justify-center gap-2 text-center font-[font2] text-[13vw] uppercase leading-[0.84] lg:gap-5 lg:text-[7vw]'>
         <span>Creates</span>
         <div className='h-[9vw] w-[22vw] min-w-24 overflow-hidden rounded-full border border-white/30 shadow-[0_0_50px_var(--color-accent-glow)] lg:h-[6vw] lg:w-[15vw]'>
           <Video />
@@ -25,7 +25,7 @@ const HomeHeroText = () => {
         <span>Bold</span>
       </div>
 
-      <div className='mt-2 text-center font-[font2] text-[13vw] uppercase leading-[0.84] lg:text-[8vw]'>
+      <div className='mt-2 text-center font-[font2] text-[13vw] uppercase leading-[0.84] lg:text-[7vw]'>
         Digital Work
       </div>
 

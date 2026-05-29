@@ -5,15 +5,19 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import Stairs from './components/common/Stairs.jsx'
 import NavContext from './context/NavContext.jsx'
+import Navbar from './components/Navigation/Navbar.jsx'
+import FullScreenNav from './components/Navigation/FullScreenNav.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Stairs>
-        <NavContext>
+      <NavContext>
+        <Navbar />
+        <FullScreenNav />
+        <Stairs>
           <App />
-        </NavContext>
-      </Stairs>
+        </Stairs>
+      </NavContext>
     </BrowserRouter>
   </React.StrictMode>,
 )
