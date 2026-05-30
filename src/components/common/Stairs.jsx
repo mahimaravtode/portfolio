@@ -39,6 +39,8 @@ const Stairs = (props) => {
         })
     }
 
+    const isFirstRender = useRef(true)
+
     useEffect(function () {
         window.addEventListener('section:navigate', playStairsAnimation)
 
@@ -48,6 +50,10 @@ const Stairs = (props) => {
     }, [])
 
     useGSAP(function () {
+        if (isFirstRender.current) {
+            isFirstRender.current = false
+            return
+        }
         playStairsAnimation()
     }, [currentPath])
     

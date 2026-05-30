@@ -1,6 +1,10 @@
 import Home from "./pages/Home";
 import { useEffect } from "react";
 import Lenis from "lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   useEffect(() => {
@@ -8,6 +12,9 @@ const App = () => {
       duration: 1.2,
       smoothWheel: true,
     });
+
+    lenis.on("scroll", ScrollTrigger.update);
+    window.lenis = lenis;
 
     let animationFrame;
 

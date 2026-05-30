@@ -5,21 +5,25 @@ import { useLocation } from 'react-router-dom'
 export const NavbarContext = createContext()
 export const NavbarColorContext = createContext()
 
+const darkSections = ['#projects', '#about', '#contact']
+
 const NavContext = ({ children }) => {
     const [navColor, setNavColor] = useState('white')
     const [navOpen, setNavOpen] = useState(false)
-    const locate = useLocation().pathname
-    useEffect(function(){
-        if(locate == '/projects' || locate == '/agence' || locate == '/about'){
+    const hash = useLocation().hash
+
+    useEffect(function () {
+        if (darkSections.includes(hash)) {
             setNavColor('black')
-        }else{
+        } else {
             setNavColor('white')
         }
-    },[locate])
+    }, [hash])
+
     return (
         <div>
             <NavbarContext.Provider value={[navOpen, setNavOpen]}>
-                <NavbarColorContext.Provider value={[navColor,setNavColor]}>
+                <NavbarColorContext.Provider value={[navColor, setNavColor]}>
                     {children}
                 </NavbarColorContext.Provider>
             </NavbarContext.Provider>
